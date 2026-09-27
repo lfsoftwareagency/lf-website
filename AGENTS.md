@@ -1,5 +1,4 @@
 # L&F Software Agency
-
 ## Rol del usuario
 
 El usuario es el responsable del proyecto
