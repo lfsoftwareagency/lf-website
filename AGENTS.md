@@ -4,9 +4,7 @@
 
 El usuario es el responsable del proyecto
 y tiene la decisión final.
-
 ## Reglas
-
 1. No cambiar la arquitectura sin autorización.
 2. No instalar dependencias sin autorización.
 3. No eliminar funcionalidades existentes.
