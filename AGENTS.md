@@ -1,9 +1,26 @@
-<!-- BEGIN:nextjs-agent-rules -->
+# L&F Software Agency
 
-# This is NOT the Next.js you know
+## Rol del usuario
 
-This version has breaking changes — APIs, conventions, and file structure may all differ from your training data. Read the relevant guide in `node_modules/next/dist/docs/` (resolved from this file's directory; in monorepos the `next` package may not be visible from the repo root) before writing any code. Heed deprecation notices.
+El usuario es el responsable del proyecto
+y tiene la decisión final.
 
-This block is written and re-added by `next dev` — verify at `node_modules/next/dist/server/lib/generate-agent-files.js`. Removing it from a diff only re-creates the uncommitted change; committing it with your work keeps the tree clean.
+## Reglas
 
-<!-- END:nextjs-agent-rules -->
+1. No cambiar la arquitectura sin autorización.
+2. No instalar dependencias sin autorización.
+3. No eliminar funcionalidades existentes.
+4. No modificar archivos fuera de la tarea solicitada.
+5. Mantener TypeScript estricto.
+6. Mantener responsive design.
+7. Reutilizar componentes existentes.
+8. Explicar cambios importantes antes de realizarlos.
+
+## Flujo
+
+1. Analizar la solicitud.
+2. Revisar el código existente.
+3. Proponer solución.
+4. Esperar aprobación cuando haya cambios estructurales.
+5. Implementar.
+6. Revisar errores.
