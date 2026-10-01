@@ -1,5 +1,6 @@
 @use "global" as *;
 
+
 .text-title{
   color: $txt-impulsa-negocio;
 }
@@ -22,8 +23,7 @@ $icon-box-purple: #7033cb;
 
   color: $btn-text-color;
   font-family: inherit;
-  font-size: 0.875rem;
-  font-weight: 700;
+  font-size: 0.875rem;  
   text-decoration: none;
   white-space: nowrap;
 
@@ -44,7 +44,24 @@ $icon-box-purple: #7033cb;
   }
 }
 
+.badge-us{
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  padding: 0.45rem 1rem;
+  color: #ffffff;
+  border-radius: 1.45rem;
+  background: rgba(255, 255, 255, 0.15);
 
+  .us{
+    color: floralwhite;
+    font-size: 0.70rem;
+    font-weight: bold;
+  }
+
+
+}
 .service-icon-box {
   width: 5rem;
   height: 5rem;
@@ -76,3 +93,4 @@ $icon-box-purple: #7033cb;
     box-shadow: 0 10px 24px -6px rgba(112, 51, 203, 0.35);}
 
 }
+

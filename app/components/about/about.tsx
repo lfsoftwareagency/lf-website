@@ -1,4 +1,4 @@
-import { MoveRight, CodeXml, PencilLine, ChartNoAxesCombined, HelpCircle    } from 'lucide-react';
+import { MoveRight, CodeXml, PencilLine, ChartNoAxesCombined, UsersRound   } from 'lucide-react';
 import '../../sass/about.scss'
 import { services } from "@/app/api/json/about.json"
 import Link from "next/link";
@@ -16,12 +16,19 @@ function About() {
                     <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
                         {/*Columna izquierda*/}
                         <div className="flex flex-col items-start gap-19">
+                            <div
+                                className="badge-us">
+                                <UsersRound className="w-4 h-4"/>
+                                <span className="us">NOSOTROS</span>
+                            </div>
+
                             <h1 className=" text-4xl sm:text-5xl font-extrabold leading-tight tracking-tight text-white">
                                 Tecnología que <br/>
                                 <span className="text-title">impulsa tu negocio</span>
                             </h1>
 
-                            <div className="flex flex-col gap-4 text-gray-300 text-base font- sm:text-lg leading-relaxed max-w-xl">
+                            <div
+                                className="flex flex-col gap-4 text-gray-300 text-base font- sm:text-lg leading-relaxed max-w-xl">
                                 <p>
                                     En L&F Software Agency convertimos ideas y necesidades de negocio en soluciones
                                     digitales funcionales, modernas y escalables.
@@ -59,9 +66,9 @@ function About() {
                                             </p>
                                         </div>
                                     </div>
+
                                 );
                             })}
-
                         </div>
 
                     </div>
