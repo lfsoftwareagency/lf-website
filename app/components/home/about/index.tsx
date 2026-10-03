@@ -1,4 +1,3 @@
-'use client'
 import { MoveRight, CodeXml, PencilLine, ChartNoAxesCombined, UsersRound   } from 'lucide-react';
 import "@/app/sass/about.scss";
 import { services } from "@/app/api/json/about.json"

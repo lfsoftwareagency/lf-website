@@ -30,14 +30,3 @@ export default function RootLayout({
         </html>
     )
 }
-
-{/*export default function RootLayout({ children }: LayoutProps<"/">) {
-  return (
-    <html lang="es" suppressHydrationWarning>
-      <body>
-        {children}
-        <ScrollToTop/>
-      </body>
-    </html>
-  );
-}*/}
