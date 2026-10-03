@@ -1,0 +1,25 @@
+{
+  "services": [
+    {
+      "id": "desarrollo-a-medida",
+      "title": "Desarrollo a medida",
+      "description": "Sistemas y aplicaciones adaptados a las necesidades de tu negocio.",
+      "iconName": "service1",
+      "bgColor": "bg-blue"
+    },
+    {
+      "id": "diseno-web",
+      "title": "Diseño web",
+      "description": "Páginas modernas, rápidas y enfocadas en ofrecer una gran experiencia de usuario.",
+      "iconName": "service2",
+      "bgColor": "bg-teal"
+    },
+    {
+      "id": "soluciones-digitales",
+      "title": "Soluciones digitales",
+      "description": "Estrategias y herramientas tecnológicas para resolver problemas reales y generar resultados.",
+      "iconName": "service3",
+      "bgColor": "bg-purple"
+    }
+  ]
+}
