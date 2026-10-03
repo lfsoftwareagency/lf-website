@@ -1,5 +1,6 @@
+'use client'
 import { MoveRight, CodeXml, PencilLine, ChartNoAxesCombined, UsersRound   } from 'lucide-react';
-import '../../sass/about.scss'
+import "@/app/sass/about.scss";
 import { services } from "@/app/api/json/about.json"
 import Link from "next/link";
 
@@ -8,7 +9,7 @@ const iconMap = {
     service2: PencilLine,
     service3: ChartNoAxesCombined,
 }
-function About() {
+function Index() {
     return (
         <>
             <section className="min-h-screen w-full flex items-center justify-center p-4 sm:p-8 lg:p-12">
@@ -84,4 +85,4 @@ function About() {
     );
 }
 
-export default About;
+export default Index;
