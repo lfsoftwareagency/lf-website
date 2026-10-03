@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap');
+
 $fondo-degradado1 : #061A2A;
 $fondo-degradado2 : #071B2F;
 $fondo-degradado3 : #10152F;
@@ -16,4 +18,8 @@ $bg-card-nv4 :#E1E100;
   padding: 0;
   margin: 0;
   box-sizing: border-box;
+}
+
+body{
+  background: $fondo-degradado2;
 }
