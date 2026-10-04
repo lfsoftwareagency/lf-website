@@ -1,10 +1,17 @@
-import About from '@/app/components/about/about'
-import Values from '@/app/components/our-values/values'
+import { Metadata } from "next";
+import HeroSection from "./components/home/hero";
+import Nosotros from './components/home/about';
+import {Analytics} from "@vercel/analytics/next";
+export const metadata: Metadata = {
+  title: "F&L Software Agency",
+};
 
 export default function Home() {
   return (
-      <>
-        <Values/>
-      </>
-    );
+      <main>
+        <Analytics/>
+        <HeroSection />
+        <Nosotros />
+      </main>
+  )
 }
