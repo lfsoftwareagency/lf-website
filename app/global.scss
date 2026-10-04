@@ -30,6 +30,14 @@ $bg-badge: rgba(255, 255, 255, 0.1);
   font-style: normal;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
+section[id] {
+  scroll-margin-top: 110px;
+}
+
 *{
   padding: 0;
   margin: 0;

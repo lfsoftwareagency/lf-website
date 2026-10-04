@@ -11,12 +11,12 @@ const logos: logo[] = [
 ];
 
 const headerItems: HeaderItem[] = [
-    { label: 'Nosotros', href: '#nosotros' },
-    { label: 'Servicios', href: '#servicios' },
-    { label: 'Proceso', href: '#proceso' },
-    { label: 'Proyectos', href: '#proyectos' },
-    { label: 'FAQ', href: '#faq' },
-    { label: 'Contacto', href: '#contacto' },
+    { label: 'Nosotros', href: '/#nosotros' },
+    { label: 'Servicios', href: '/#servicios' },
+    { label: 'Proceso', href: '/#proceso' },
+    { label: 'Proyectos', href: '/#proyectos' },
+    { label: 'FAQ', href: '/#faq' },
+    { label: 'Contacto', href: '/#contacto' },
 ];
 
 const hero_imagen: hero_img[] = [
