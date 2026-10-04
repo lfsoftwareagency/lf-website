@@ -11,7 +11,7 @@ const iconMap = {
 function Index() {
     return (
         <>
-            <section className="min-h-screen w-full flex items-center justify-center p-4 sm:p-8 lg:p-12">
+            <section id="nosotros" className="min-h-screen w-full flex items-center justify-center p-4 sm:p-8 lg:p-12">
                 <div className="w-full max-w-6xl mx-auto py-12 px-6 sm:px-12 lg:px-16">
                     <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
                         {/*Columna izquierda*/}

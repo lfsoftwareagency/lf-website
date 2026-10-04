@@ -15,6 +15,31 @@ const Header = () => {
 
     const pathname = usePathname();
 
+    const handleNavigation = (
+        e: React.MouseEvent<HTMLAnchorElement>,
+        href: string
+    ) => {
+        const hash = href.split('#')[1];
+
+        if (!hash) return;
+
+        e.preventDefault();
+
+        const element = document.getElementById(hash);
+
+        if (element) {
+            element.scrollIntoView({
+                behavior: 'smooth',
+                block: 'start',
+            });
+
+            window.history.pushState(null, '', `#${hash}`);
+        }
+
+        setSidebarOpen(false);
+    };
+
+
     useEffect(() => {
         const fetchMenuData = async () => {
             try {
@@ -65,15 +90,7 @@ const Header = () => {
                     <nav className="header_nav">
 
                         {menuItems.map((item, index) => (
-                            <Link
-                                key={index}
-                                href={item.href}
-                                className={`header_link ${
-                                    pathname === item.href
-                                        ? 'header_link-active'
-                                        : ''
-                                }`}
-                            >
+                            <Link key={index} href={item.href} onClick={(e) => handleNavigation(e, item.href)} className={`header_link ${pathname === item.href ? 'header_link-active' : ''}`}>
                                 {item.label}
                             </Link>
                         ))}
@@ -92,9 +109,7 @@ const Header = () => {
                     </button>
 
                 </div>
-
             </header>
-
 
             {/* OVERLAY MOBILE */}
             {sidebarOpen && (
@@ -104,12 +119,12 @@ const Header = () => {
                 />
             )}
 
-
             {/* SIDEBAR MOBILE */}
             <aside className={`header_sidebar ${sidebarOpen ? 'header_sidebar-open' : ''}`}>
                 <div className="header_sidebar-top">
                     {/* Logo */}
                     <Logo logoData={logoData} />
+                    <div className="titulo-nav">L&F Software Agency</div>
 
                     {/* Botón Cerrar */}
                     <button
@@ -128,7 +143,7 @@ const Header = () => {
                             key={index}
                             href={item.href}
                             className={`header_mobile-link ${pathname === item.href ? 'active' : ''}`}
-                            onClick={() => setSidebarOpen(false)}
+                            onClick={(e) => handleNavigation(e, item.href)}
                         >
                             {item.label}
                         </Link>
