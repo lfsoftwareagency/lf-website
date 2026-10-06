@@ -9,14 +9,14 @@ const iconMap = {
     service2: PencilLine,
     service3: ChartNoAxesCombined,
 }
-function Index() {
+function About() {
     return (
         <>
-            <section id="nosotros" className="min-h-screen w-full flex items-center justify-center p-4 sm:p-8 lg:p-12">
-                <div className="w-full max-w-6xl mx-auto py-12 px-6 sm:px-12 lg:px-16">
-                    <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+            <section id="nosotros" className="min-h-screen w-full flex items-start justify-center pt-10 sm:pt-1 lg:pt-0 pb-12 px-4 sm:px-8 lg:px-1">
+                <div className="w-full max-w-6xl mx-auto px-6 sm:px-12 lg:px-16">
+                    <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-13 items-center">
                         {/*Columna izquierda*/}
-                        <div className="flex flex-col items-start gap-8 lg:gap-[4.75rem]">
+                        <div className="flex flex-col items-start gap-8 lg:gap-[4rem]">
 
                             <Badge titleBadge="NOSOTROS" icon={UsersRound}/>
 
@@ -75,4 +75,4 @@ function Index() {
     );
 }
 
-export default Index;
+export default About;
