@@ -1,8 +1,4 @@
 
-.text-title{
-  color: #FFFFFF;
-}
-
 $btn-primary-bg: #1d65ff;
 $btn-primary-hover: #1554d6;
 $btn-text-color: #ffffff;
@@ -11,6 +7,10 @@ $btn-glow: rgba(29, 101, 255, 0.35);
 $icon-box-blue: #195bde;
 $icon-box-teal: #0c8a81;
 $icon-box-purple: #7033cb;
+
+.text-title{
+  color: $btn-primary-bg;
+}
 
 .btn-about {
   display: inline-flex;

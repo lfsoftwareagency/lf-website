@@ -53,8 +53,8 @@ function About() {
                                         key={index}
                                         className={`flex items-start gap-5 ${index !== 0 ? 'lg:pt-8' : ''}`}
                                     >
-                                        <div className={`service-icon-box shrink-0 ${item.bgColor}`}>
-                                            <IconComponent className="service-icon"/>
+                                        <div className={`solutions-icon-box shrink-0 ${item.bgColor}`}>
+                                            <IconComponent className="solution-icon"/>
                                         </div>
                                         <div className="space-y-1 min-w-0">
                                             <h3 className="text-lg font-bold text-white tracking-wide">

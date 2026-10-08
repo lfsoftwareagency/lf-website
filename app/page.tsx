@@ -1,7 +1,8 @@
 import { Metadata } from "next";
 import HeroSection from "./components/home/hero";
 import AboutSection from './components/home/about';
-import ValueSection from './components/home/our-values'
+import ValueSection from './components/home/our-values';
+import ServiceSection from './components/home/services'
 
 import {Analytics} from "@vercel/analytics/next";
 export const metadata: Metadata = {
@@ -15,6 +16,7 @@ export default function Home() {
         <HeroSection />
         <AboutSection />
         <ValueSection />
+        <ServiceSection/>
       </main>
   )
 }
