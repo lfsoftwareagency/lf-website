@@ -187,15 +187,15 @@
   bottom: 0;
 }
 .proceso_seccion .timeline_wrapper .step_column .node_circle {
-  width: 80px;
-  height: 80px;
+  width: 50px;
+  height: 50px;
   border-radius: 50%;
   background-color: var(--accent-color);
   display: flex;
   align-items: center;
   justify-content: center;
-  font-weight: 700;
-  font-size: 25px;
+  font-weight: bold;
+  font-size: 18px;
   color: #ffffff;
   box-shadow: 0 0 25px 6px var(--accent-color);
   z-index: 3;
