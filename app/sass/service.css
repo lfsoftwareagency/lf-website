@@ -1,0 +1,100 @@
+.title-services {
+  color: #1d65ff;
+}
+
+.service-card-wrapper {
+  position: relative;
+  border-radius: 2rem;
+  transition: transform 0.25s ease;
+}
+.service-card-wrapper::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  transform: translate(10px, 10px);
+  border-radius: 2rem;
+  z-index: 0;
+}
+.service-card-wrapper:hover {
+  transform: translateY(-4px);
+}
+.service-card-wrapper .service-card {
+  position: relative;
+  z-index: 1;
+  background-color: #ffffff;
+  border-radius: 2rem;
+}
+.service-card-wrapper .service-card .icon-box {
+  border-radius: 1.25rem;
+}
+.service-card-wrapper .service-card .body_card h3 {
+  color: #121826;
+}
+.service-card-wrapper .service-card .body_card p {
+  color: #4b5563;
+}
+.service-card-wrapper .service-card__divider {
+  display: block;
+  width: 4rem;
+  height: 4px;
+  border-radius: 9999px;
+  margin: 0.75rem 0 0.85rem 0;
+}
+.service-card-wrapper--blue::before {
+  background-color: #0056d6;
+}
+.service-card-wrapper--blue .service-card .icon-box {
+  background-color: #bcd8ff;
+  color: #0047b3;
+}
+.service-card-wrapper--blue .service-card__divider {
+  background-color: #0066ff;
+}
+.service-card-wrapper--teal::before {
+  background-color: #00b49f;
+}
+.service-card-wrapper--teal .service-card .icon-box {
+  background-color: #b8f5ed;
+  color: #008f7d;
+}
+.service-card-wrapper--teal .service-card__divider {
+  background-color: #00d6bc;
+}
+.service-card-wrapper--purple::before {
+  background-color: #6b00b6;
+}
+.service-card-wrapper--purple .service-card .icon-box {
+  background-color: #e6c8ff;
+  color: #6a00b5;
+}
+.service-card-wrapper--purple .service-card__divider {
+  background-color: #9d26ff;
+}
+
+.service-icon-box {
+  width: 5rem;
+  height: 5rem;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 1.2rem;
+  box-shadow: 0 10px 24px -6px rgba(0, 0, 0, 0.4);
+}
+.service-icon-box .span-number {
+  color: #FFFFFF;
+}
+.service-icon-box.bg-blue {
+  background-color: #195bde;
+  box-shadow: 0 10px 24px -6px rgba(25, 91, 222, 0.35);
+}
+.service-icon-box.bg-teal {
+  background-color: #0c8a81;
+  box-shadow: 0 10px 24px -6px rgba(12, 138, 129, 0.35);
+}
+.service-icon-box.bg-purple {
+  background-color: #7033cb;
+  box-shadow: 0 10px 24px -6px rgba(112, 51, 203, 0.35);
+}
+
+/*# sourceMappingURL=service.css.map */
