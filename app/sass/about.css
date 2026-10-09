@@ -1,18 +1,60 @@
-/* Error: Can't find stylesheet to import.
- *   ,
- * 1 | @import "tailwindcss";
- *   |         ^^^^^^^^^^^^^
- *   '
- *   global.scss 1:9  @use
- *   about.scss 2:1   root stylesheet */
-
-body::before {
-  font-family: "Source Code Pro", "SF Mono", Monaco, Inconsolata, "Fira Mono",
-      "Droid Sans Mono", monospace, monospace;
-  white-space: pre;
-  display: block;
-  padding: 1em;
-  margin-bottom: 1em;
-  border-bottom: 2px solid black;
-  content: "Error: Can't find stylesheet to import.\a   \2577 \a 1 \2502  @import \"tailwindcss\";\d\a   \2502          ^^^^^^^^^^^^^\a   \2575 \a   global.scss 1:9  @use\a   about.scss 2:1   root stylesheet";
+.text-title {
+  color: #FFFFFF;
 }
+
+.btn-about {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  padding: 0.65rem 1.6rem;
+  color: #ffffff;
+  font-family: inherit;
+  font-size: 0.875rem;
+  text-decoration: none;
+  white-space: nowrap;
+  background-color: #1d65ff;
+  border: none;
+  border-radius: 9999px;
+  cursor: pointer;
+  box-shadow: 0 4px 14px rgba(29, 101, 255, 0.35);
+  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.btn-about:hover {
+  background-color: #1554d6;
+  box-shadow: 0 6px 20px rgba(29, 101, 255, 0.5);
+}
+.btn-about:active {
+  transform: scale(0.98);
+}
+
+.service-icon-box {
+  width: 5rem;
+  height: 5rem;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 1.2rem;
+  box-shadow: 0 10px 24px -6px rgba(0, 0, 0, 0.4);
+}
+.service-icon-box .service-icon {
+  width: 3rem;
+  height: 3rem;
+  color: #ffffff;
+  stroke-width: 1.8;
+}
+.service-icon-box.bg-blue {
+  background-color: #195bde;
+  box-shadow: 0 10px 24px -6px rgba(25, 91, 222, 0.35);
+}
+.service-icon-box.bg-teal {
+  background-color: #0c8a81;
+  box-shadow: 0 10px 24px -6px rgba(12, 138, 129, 0.35);
+}
+.service-icon-box.bg-purple {
+  background-color: #7033cb;
+  box-shadow: 0 10px 24px -6px rgba(112, 51, 203, 0.35);
+}
+
+/*# sourceMappingURL=about.css.map */
