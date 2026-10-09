@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import "./global.scss";
 import Header from './components/layout/header';
 import ScrollToTop from './components/scroll-to-top'
-import { Analytics } from "@vercel/analytics/next"
 
 export const metadata: Metadata = {
   title: "L&F Software Agency",
@@ -24,7 +23,6 @@ export default function RootLayout({
             <Header />
             {children}
             <Footer />
-            <FabriBot/>
             <ScrollToTop />
         </ThemeProvider>*/}
         </body>
