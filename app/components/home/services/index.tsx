@@ -1,12 +1,12 @@
-import { Target, Presentation, Headset, UsersRound} from "lucide-react";
+import { Target, Presentation, Headset, UsersRound, Lightbulb, Code2, Palette, LifeBuoy } from "lucide-react";
 import Badge from "@/app/components/ui/badge";
 import {services, solutions} from "@/app/api/json/services.json"
 import '@/app/sass/service.scss'
 
 const iconService = {
-    service1: UsersRound,
-    service2: UsersRound,
-    service3: UsersRound
+    software: Code2,
+    diseño: Palette,
+    soporte: LifeBuoy
 }
 
 const  iconSolutions = {
@@ -26,7 +26,19 @@ function Services() {
                         {/*Columna izquierda*/}
                         <div className="flex flex-col items-start gap-8 lg:gap-[1.5rem] lg:-mt-6 ">
 
-                            <Badge titleBadge="SOLUCIONES DE IMPACTO" icon={UsersRound}/>
+                            <Badge titleBadge="SOLUCIONES DE IMPACTO" icon={Lightbulb}/>
+
+                            {/*SOLO SE MOSTRARA PARA PANTALLAS MEDIANAS Y PEQUEÑAS*/}
+                            <div className="flex flex-col gap-3 mb-8 lg:hidden">
+                                <h1 className="text-4xl sm:text-5xl font-extrabold leading-tight tracking-tight text-white">
+                                    Impulsamos tu negocio con <br/>
+                                    <span className="title-services">tecnología sólida </span>
+                                    y escalable
+                                </h1>
+                                <p className="text-gray-300 text-base sm:text-lg leading-relaxed max-w-2xl">
+                                    Soluciones digitales a medida para empresas que quieren crecer.
+                                </p>
+                            </div>
 
                             <div className="w-full flex flex-col gap-6 sm:gap-8">
                                 {services.map((item) => {
@@ -37,10 +49,12 @@ function Services() {
                                             key={item.id}
                                             className={`service-card-wrapper  service-card-wrapper--${item.bgColor}`}
                                         >
-                                            <div className="service-card  flex flex-col sm:flex-row items-start gap-4 sm:gap-6 p-6 sm:p-7">
+                                            <div
+                                                className="service-card  flex flex-col sm:flex-row items-start gap-4 sm:gap-6 p-6 sm:p-7">
 
-                                                <div className="service-card icon-box shrink-0 flex items-center justify-center w-16 h-16 sm:w-20 sm:h-20">
-                                                    <IconComponent className="w-8 h-8 sm:w-10 sm:h-10" />
+                                                <div
+                                                    className="service-card icon-box shrink-0 flex items-center justify-center w-16 h-16 sm:w-20 sm:h-20">
+                                                    <IconComponent className="w-8 h-8 sm:w-10 sm:h-10"/>
                                                 </div>
 
                                                 {/* Contenido textual */}
@@ -49,7 +63,7 @@ function Services() {
                                                         {item.title}
                                                     </h3>
 
-                                                    <span className="service-card__divider" />
+                                                    <span className="service-card__divider"/>
 
                                                     <p className="text-sm sm:text-xs lg:text-xs md:text-base leading-relaxed">
                                                         {item.description}
@@ -66,16 +80,19 @@ function Services() {
 
                         {/*Columna derecha*/}
                         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-1 gap-8 sm:gap-x-10 lg:gap-2">
-                            <h1 className="text-4xl lg:text-4xl sm:text-5xl font-extrabold leading-tight tracking-tight text-white">
-                                Impulsamos tu negocio con <br/>
-                                <span className="title-services">tecnología sólida </span>
-                                y escalable
-                            </h1>
+                            <div className="hidden lg:block">
+                                <h1 className="text-4xl lg:text-4xl sm:text-5xl font-extrabold leading-tight tracking-tight text-white">
+                                    Impulsamos tu negocio con <br/>
+                                    <span className="title-services">tecnología sólida </span>
+                                    y escalable
+                                </h1>
 
-                            <div className="flex flex-col mb-2 text-gray-300 text-base sm:text-lg lg:text-base leading-relaxed max-w-2xl lg:max-w-xl">
-                                <p>
-                                    Soluciones digitales a medida para empresas que quieren crecer.
-                                </p>
+                                <div
+                                    className="flex flex-col mb-2 text-gray-300 text-base sm:text-lg lg:text-base leading-relaxed max-w-2xl lg:max-w-xl">
+                                    <p>
+                                        Soluciones digitales a medida para empresas que quieren crecer.
+                                    </p>
+                                </div>
                             </div>
 
                             {solutions.map((item, index) => {
@@ -86,13 +103,14 @@ function Services() {
                                         className={`flex items-start gap-5 ${index !== 0 ? 'lg:pt-8' : ''}`}
                                     >
                                         <div className={`service-icon-box shrink-0 ${item.bgColor}`}>
-                                            <IconComponent className="service-icon"/>
+                                            <span className="lg:text-4xl md:text-3xl sm:text-3xl text-2xl span-number">{item.number}</span>
                                         </div>
+
                                         <div className="space-y-1 min-w-0">
                                             <h3 className="text-lg font-bold text-white tracking-wide">
                                                 {item.title}
                                             </h3>
-                                            <p className="text-gray-300 text-sm leading-relaxed max-w-md">
+                                            <p className="text-gray-300 text-sm lg:text-xs leading-relaxed max-w-md">
                                                 {item.description}
                                             </p>
                                         </div>

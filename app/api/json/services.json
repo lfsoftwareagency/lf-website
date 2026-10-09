@@ -4,21 +4,21 @@
       "id" : "desarrollo-medida",
       "title" : "Desarrollo de software a medida",
       "description" : "Diseñamos y construimos sistemas robustos desde cero. Creamos la infraestructura y el backend que tu empresa necesita para centralizar datos y escalar sin limites.",
-      "iconName": "service1",
+      "iconName": "software",
       "bgColor" : "blue"
     },
     {
       "id" : "diseño-producto",
       "title" : "Diseño de producto (UI/UX)",
       "description" : "Creamos interfaces intuitivas y atractivas centradas en el usuario. Convertimos procesos complejos en experiencias simples que tus clientes disfrutan usar.",
-      "iconName": "service2",
+      "iconName": "diseño",
       "bgColor" : "teal"
     },
     {
       "id" : "soporte-mantenimiento",
       "title" : "Soporte y Mantenimiento",
       "description" : "Acompañamos tu software después del lanzamiento. Monitoreo, actualizaciones y mejoras continuas para tu sistema nunca se quede atrás.",
-      "iconName": "service3",
+      "iconName": "soporte",
       "bgColor" : "purple"
     }
   ],
@@ -29,6 +29,7 @@
       "title": "Estrategia antes del desarrollo",
       "description": "Analizamos las necesidadesde de tu negocio para crear soluciones web y sistemas que realmente se adapten a tus procesos y te ayuden a crecer",
       "icon": "solution1",
+      "number": "01",
       "bgColor" : "bg-blue"
     },
     {
@@ -36,6 +37,7 @@
       "title": "Avances visibles paso a paso",
       "description": "Te mantenemos al tanto del progreso durante todo el proyecto. Podrás revisar avances y darnos tu feedback para asegurar que el resultado se adapte a lo que necesitas.",
       "icon": "solution2",
+      "number": "02",
       "bgColor" : "bg-teal"
     },
     {
@@ -43,6 +45,7 @@
       "title": "Soporte después del lanzamiento",
       "description": "No terminamos el proyecto cuando se publica. Te acompañamos con soporte, mejoras y mantenimiento para que tu solución siga funcionando y creciendo contigo.",
       "icon": "solution3",
+      "number": "03",
       "bgColor" : "bg-purple"
     }
   ]
