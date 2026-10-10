@@ -1,5 +1,5 @@
 import { NextResponse } from 'next/server';
-import type { HeaderItem, hero_img, logo, procesos } from '@/app/types/menu';
+import type {HeaderItem, hero_img, logo, procesos, proyectos_section} from '@/app/types/menu';
 
 export const dynamic = 'force-dynamic';
 
@@ -85,11 +85,54 @@ const procesosData: procesos = {
     ]
 };
 
+const proyectosData: proyectos_section = {
+    badge_icon: '/img/proyectos/logo-badge.png',
+    badge_text: 'PROYECTOS',
+    title: 'Proyectos que convierten ideas en',
+    title_highlight: 'soluciones',
+    subtitle: 'Desarrollamos soluciones digitales pensadas para resolver necesidades reales y generar resultados.',
+    projects: [
+        {
+            id: '1',
+            category: 'Sistemas web',
+            title: 'Sistemas de gestión empresarial',
+            description: 'Plataforma web para la administración de procesos, usuarios y reportes.',
+            image: '/img/proyectos/proyecto-1.png', // Reemplaza con tu imagen o mock
+            tags: ['Web', 'Web', 'UI/UX', 'Desarrollo'],
+            link: '#contacto'
+        },
+        {
+            id: '2',
+            category: 'Sistemas web',
+            title: 'Sistemas de gestión empresarial',
+            description: 'Plataforma web para la administración de procesos, usuarios y reportes.',
+            image: '/img/proyectos/proyecto-2.png',
+            tags: ['Web', 'Web', 'UI/UX', 'Desarrollo'],
+            link: '#contacto'
+        },
+        {
+            id: '3',
+            category: 'Sistemas web',
+            title: 'Sistemas de gestión empresarial',
+            description: 'Plataforma web para la administración de procesos, usuarios y reportes.',
+            image: '/img/proyectos/proyecto-3.png',
+            tags: ['Web', 'Web', 'UI/UX', 'Desarrollo'],
+            link: '#contacto'
+        }
+    ],
+    view_more_card: {
+        title: 'Ver más proyectos',
+        description: 'Explore nuestra galería completa de soluciones digitales exitosas.',
+        link: '#proyectos'
+    }
+};
+
 export async function GET() {
     return NextResponse.json({
         headerItems,
         hero_imagen,
         logos,
-        procesosData
+        procesosData,
+        proyectosData
     });
 }
