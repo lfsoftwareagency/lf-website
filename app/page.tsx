@@ -1,12 +1,11 @@
 import { Metadata } from "next";
 import HeroSection from "./components/home/hero";
-import AboutSection from './components/home/about';
-import ValueSection from './components/home/our-values';
-import ServiceSection from './components/home/services'
-
+import Nosotros from './components/home/about';
+import Procesos from './components/home/procesos'
+import Proyectos from './components/home/proyectos'
 import {Analytics} from "@vercel/analytics/next";
 export const metadata: Metadata = {
-  title: "F&L Software Agency",
+  title: "L&F Software Agency",
 };
 
 export default function Home() {
@@ -14,9 +13,9 @@ export default function Home() {
       <main>
         <Analytics/>
         <HeroSection />
-        <AboutSection />
-        <ValueSection />
-        <ServiceSection/>
+        <Nosotros />
+        <Procesos/>
+        <Proyectos/>
       </main>
   )
 }
