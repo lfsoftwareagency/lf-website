@@ -1,0 +1,59 @@
+.value-card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+  border-width: 1.5px;
+  border-style: solid;
+  backdrop-filter: blur(8px);
+}
+.value-card:hover {
+  transform: translateY(-6px);
+}
+.value-card--purple {
+  background-color: rgba(67, 36, 116, 0.45);
+  border-color: rgba(147, 70, 245, 0.4);
+}
+.value-card--purple .icon-box {
+  background-color: #9846f5;
+  box-shadow: 0 8px 20px -4px rgba(0, 0, 0, 0.35);
+}
+.value-card--purple:hover {
+  border-color: rgba(74.2624434389%, 55.9125188537%, 97.616892911%, 0.4);
+  box-shadow: 0 16px 30px -10px rgba(0, 0, 0, 0.5);
+}
+.value-card--blue {
+  background-color: rgba(15, 63, 138, 0.45);
+  border-color: rgba(29, 115, 242, 0.4);
+}
+.value-card--blue .icon-box {
+  background-color: #1d73f2;
+  box-shadow: 0 8px 20px -4px rgba(0, 0, 0, 0.35);
+}
+.value-card--blue:hover {
+  border-color: rgba(39.7407498564%, 62.671260973%, 96.5337599475%, 0.4);
+  box-shadow: 0 16px 30px -10px rgba(0, 0, 0, 0.5);
+}
+.value-card--teal {
+  background-color: rgba(15, 87, 88, 0.45);
+  border-color: rgba(30, 168, 150, 0.4);
+}
+.value-card--teal .icon-box {
+  background-color: #22d3b6;
+  box-shadow: 0 8px 20px -4px rgba(0, 0, 0, 0.35);
+}
+.value-card--teal:hover {
+  border-color: rgba(21.6399286988%, 86.0071301248%, 77.6114081996%, 0.4);
+  box-shadow: 0 16px 30px -10px rgba(0, 0, 0, 0.5);
+}
+.value-card--lime {
+  background-color: rgba(69, 87, 24, 0.45);
+  border-color: rgba(163, 190, 40, 0.4);
+}
+.value-card--lime .icon-box {
+  background-color: #ccdf13;
+  box-shadow: 0 8px 20px -4px rgba(0, 0, 0, 0.35);
+}
+.value-card--lime:hover {
+  border-color: rgba(76.7527706735%, 86.1210571185%, 34.0750213129%, 0.4);
+  box-shadow: 0 16px 30px -10px rgba(0, 0, 0, 0.5);
+}
+
+/*# sourceMappingURL=value.css.map */
