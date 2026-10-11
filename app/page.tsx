@@ -1,6 +1,8 @@
 import { Metadata } from "next";
 import HeroSection from "./components/home/hero";
 import Nosotros from './components/home/about';
+import Servicios from './components/home/services';
+import Nvalores from './components/home/our-values';
 import Procesos from './components/home/procesos'
 import Proyectos from './components/home/proyectos'
 import {Analytics} from "@vercel/analytics/next";
@@ -14,6 +16,8 @@ export default function Home() {
         <Analytics/>
         <HeroSection />
         <Nosotros />
+        <Nvalores />
+        <Servicios />
         <Procesos/>
         <Proyectos/>
       </main>

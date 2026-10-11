@@ -21,5 +21,36 @@
       "iconName": "service3",
       "bgColor": "bg-purple"
     }
+  ],
+
+  "values" : [
+    {
+      "id": "compromiso",
+      "theme": "purple",
+      "icon": "val1",
+      "title": "Compromiso",
+      "description": "Nos involucramos profundamente en cada proyecto para entender tus necesidades."
+    },
+    {
+      "id": "innovacion",
+      "theme": "blue",
+      "icon": "val2",
+      "title": "Innovación",
+      "description": "Buscamos constantemente nuevas y mejores soluciones tecnológicas"
+    },
+    {
+      "id": "calidad",
+      "theme": "teal",
+      "icon": "val3",
+      "title": "Calidad",
+      "description": "Entregamos software robusto, escalable y con un diseño excepcional."
+    },
+    {
+      "id": "crecimiento",
+      "theme": "lime",
+      "icon": "val4",
+      "title": "Crecimiento",
+      "description": "Nos enfocamos en el crecimiento de tu negocio y en el nuestro."
+    }
   ]
 }
