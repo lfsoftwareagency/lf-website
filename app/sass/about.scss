@@ -1,4 +1,11 @@
 
+@use "global" as *;
+
+
+.text-title{
+  color: $txt-impulsa-negocio;
+}
+
 $btn-primary-bg: #1d65ff;
 $btn-primary-hover: #1554d6;
 $btn-text-color: #ffffff;
@@ -7,10 +14,6 @@ $btn-glow: rgba(29, 101, 255, 0.35);
 $icon-box-blue: #195bde;
 $icon-box-teal: #0c8a81;
 $icon-box-purple: #7033cb;
-
-.text-title{
-  color: $btn-primary-bg;
-}
 
 .btn-about {
   display: inline-flex;
@@ -42,7 +45,24 @@ $icon-box-purple: #7033cb;
   }
 }
 
+.badge-us{
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  padding: 0.45rem 1rem;
+  color: #ffffff;
+  border-radius: 1.45rem;
+  background: rgba(255, 255, 255, 0.15);
 
+  .us{
+    color: floralwhite;
+    font-size: 0.70rem;
+    font-weight: bold;
+  }
+
+
+}
 .service-icon-box {
   width: 5rem;
   height: 5rem;
