@@ -1,4 +1,4 @@
-@import "tailwindcss";
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap');
 
 $fondo-degradado1 : #061A2A;
 $fondo-degradado2 : #071B2F;
@@ -13,13 +13,44 @@ $bg-card-nv1 :#A855F7;
 $bg-card-nv2 :#0B5BDA;
 $bg-card-nv3 :#2EE6C3;
 $bg-card-nv4 :#E1E100;
+$bg-borde-badge: rgba(255, 255, 255, 0.15);
+$bg-badge: rgba(255, 255, 255, 0.1);
 
-* {
+.plus-jakarta-sans-regular {
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.plus-jakarta-sans-bold {
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 700;
+  font-style: normal;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+section[id] {
+  scroll-margin-top: 110px;
+}
+
+*{
   padding: 0;
   margin: 0;
   box-sizing: border-box;
+  user-select: none;
 }
-body{
-  background: $fondo-degradado2;
+
+body {
+  min-height: 100vh;
+  background: linear-gradient(
+    180deg,
+    $fondo-degradado1 0%,
+    $fondo-degradado2 50%,
+    $fondo-degradado3 100%
+  );
 }
-/*# sourceMappingURL=global.css.map */
