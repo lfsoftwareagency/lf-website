@@ -39,7 +39,7 @@
   color: #0071f4;
 }
 .proyectos_section .proyectos_header .proyectos_subtitulo {
-  font-size: 0.95rem;
+  font-size: 1rem;
   color: #94a3b8;
   line-height: 1.6;
 }
@@ -177,7 +177,7 @@
 }
 
 @media (max-width: 992px) {
-  .proyecto_seccion .proyectos_grid {
+  .proyectos_section .proyectos_grid {
     grid-template-columns: 1fr;
   }
 }
