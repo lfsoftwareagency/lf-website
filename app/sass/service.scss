@@ -1,0 +1,128 @@
+$btn-primary-bg: #1d65ff;
+$btn-primary-hover: #1554d6;
+$btn-text-color: #ffffff;
+$btn-glow: rgba(29, 101, 255, 0.35);
+
+$icon-box-blue: #195bde;
+$icon-box-teal: #0c8a81;
+$icon-box-purple: #7033cb;
+
+$service-themes: (
+        blue: (
+                layer-bg: #0056d6,
+                icon-bg: #bcd8ff,
+                icon-color: #0047b3,
+                divider: #0066ff,
+        ),
+        teal: (
+                layer-bg: #00b49f,
+                icon-bg: #b8f5ed,
+                icon-color: #008f7d,
+                divider: #00d6bc,
+        ),
+        purple: (
+                layer-bg: #6b00b6,
+                icon-bg: #e6c8ff,
+                icon-color: #6a00b5,
+                divider: #9d26ff,
+        ),
+);
+
+.title-services{
+  color: $btn-primary-bg;
+}
+
+.service-card-wrapper {
+  position: relative;
+  border-radius: 2rem;
+  transition: transform 0.25s ease;
+
+  &::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    transform: translate(10px, 10px);
+    border-radius: 2rem;
+    z-index: 0;
+  }
+
+  &:hover {
+    transform: translateY(-4px);
+  }
+
+  .service-card {
+    position: relative;
+    z-index: 1;
+    background-color: #ffffff;
+    border-radius: 2rem;
+
+    .icon-box {
+      border-radius: 1.25rem;
+    }
+
+    .body_card {
+      h3 {
+        color: #121826;
+      }
+
+      p {
+        color: #4b5563;
+      }
+    }
+
+    &__divider {
+      display: block;
+      width: 4rem;
+      height: 4px;
+      border-radius: 9999px;
+      margin: 0.75rem 0 0.85rem 0;
+    }
+  }
+
+  @each $name, $colors in $service-themes {
+    &--#{$name} {
+      &::before {
+        background-color: map-get($colors, layer-bg);
+      }
+
+      .service-card .icon-box {
+        background-color: map-get($colors, icon-bg);
+        color: map-get($colors, icon-color);
+      }
+
+      .service-card__divider {
+        background-color: map-get($colors, divider);
+      }
+    }
+  }
+}
+
+.service-icon-box {
+  width: 5rem;
+  height: 5rem;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 1.20rem;
+  box-shadow: 0 10px 24px -6px rgba(0, 0, 0, 0.4);
+
+  .span-number {
+    color: #FFFFFF;
+  }
+
+
+  &.bg-blue   {
+    background-color: $icon-box-blue ;
+    box-shadow: 0 10px 24px -6px rgba(25, 91, 222, 0.35);}
+
+  &.bg-teal   {
+    background-color: $icon-box-teal;
+    box-shadow: 0 10px 24px -6px rgba(12, 138, 129, 0.35);}
+
+  &.bg-purple {
+    background-color: $icon-box-purple;
+    box-shadow: 0 10px 24px -6px rgba(112, 51, 203, 0.35);}
+}
+
+

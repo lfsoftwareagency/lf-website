@@ -1,0 +1,51 @@
+
+$card-themes: (
+        purple: (
+                bg: rgba(67, 36, 116, 0.45),
+                border: rgba(147, 70, 245, 0.4),
+                icon-bg: #9846f5,
+        ),
+        blue: (
+                bg: rgba(15, 63, 138, 0.45),
+                border: rgba(29, 115, 242, 0.4),
+                icon-bg: #1d73f2,
+        ),
+        teal: (
+                bg: rgba(15, 87, 88, 0.45),
+                border: rgba(30, 168, 150, 0.4),
+                icon-bg: #22d3b6,
+        ),
+        lime: (
+                bg: rgba(69, 87, 24, 0.45),
+                border: rgba(163, 190, 40, 0.4),
+                icon-bg: #ccdf13,
+        ),
+);
+
+.value-card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+  border-width: 1.5px;
+  border-style: solid;
+  backdrop-filter: blur(8px);
+
+  &:hover {
+    transform: translateY(-6px);
+  }
+
+  @each $name, $colors in $card-themes {
+    &--#{$name} {
+      background-color: map-get($colors, bg);
+      border-color: map-get($colors, border);
+
+      .icon-box {
+        background-color: map-get($colors, icon-bg);
+        box-shadow: 0 8px 20px -4px rgba(0, 0, 0, 0.35);
+      }
+
+      &:hover {
+        border-color: lighten(map-get($colors, border), 15%);
+        box-shadow: 0 16px 30px -10px rgba(0, 0, 0, 0.5);
+      }
+    }
+  }
+}
