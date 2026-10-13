@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import "./global.scss";
 import Header from './components/layout/header';
+import Footer from './components/layout/footer';
 import ScrollToTop from './components/scroll-to-top'
 
 export const metadata: Metadata = {
@@ -19,6 +20,7 @@ export default function RootLayout({
         <Header />
         {children}
         <ScrollToTop />
+        <Footer />
         {/*<ThemeProvider attribute='class' enableSystem={false} defaultTheme='light'>
             <Header />
             {children}

@@ -1,0 +1,227 @@
+@charset "UTF-8";
+.contacto_section {
+  width: 100%;
+  padding: 1rem 2rem 4rem 2rem;
+  scroll-margin-top: 70px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: "Plus Jakarta Sans", sans-serif;
+}
+.contacto_section .contacto_header {
+  text-align: center;
+  max-width: 650px;
+  margin-bottom: 2rem;
+}
+.contacto_section .contacto_header .contacto_titulo {
+  font-size: 2.25rem;
+  font-weight: bold;
+  color: #ffffff;
+  margin-bottom: 0.5rem;
+}
+.contacto_section .contacto_header .contacto_titulo span {
+  color: #0071f4;
+}
+.contacto_section .contacto_header .contacto_subtitulo {
+  font-size: 0.95rem;
+  color: #94a3b8;
+  line-height: 1.6;
+}
+.contacto_section .contacto_container {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr;
+  gap: 2rem;
+  width: 100%;
+  max-width: 1200px;
+  /* Formulario Izquierda */
+  /* Columna Derecha */
+}
+.contacto_section .contacto_container .contacto_form_card {
+  background: rgba(255, 255, 255, 0.15);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 1.25rem;
+  padding: 2.5rem;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+.contacto_section .contacto_container .contacto_form_card .form_grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.25rem;
+}
+.contacto_section .contacto_container .contacto_form_card .input_box {
+  position: relative;
+  display: flex;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.4);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 0.75rem;
+  padding: 0 1rem;
+  transition: border-color 0.2s;
+}
+.contacto_section .contacto_container .contacto_form_card .input_box:focus-within {
+  border-color: #0071f4;
+}
+.contacto_section .contacto_container .contacto_form_card .input_box .input_icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 0.75rem;
+  opacity: 0.7;
+}
+.contacto_section .contacto_container .contacto_form_card .input_box input {
+  width: 100%;
+  border: none;
+  outline: none;
+  color: #ffffff;
+  font-size: 0.9rem;
+  padding: 0.9rem 0;
+  font-family: inherit;
+}
+.contacto_section .contacto_container .contacto_form_card .input_box input::placeholder {
+  color: #ffffff;
+}
+.contacto_section .contacto_container .contacto_form_card .textarea_box {
+  align-items: flex-start;
+  padding-top: 0.9rem;
+}
+.contacto_section .contacto_container .contacto_form_card .textarea_box .textarea_icon {
+  margin-top: 0.1rem;
+}
+.contacto_section .contacto_container .contacto_form_card .textarea_box textarea {
+  width: 100%;
+  height: 10rem;
+  background: transparent;
+  border: none;
+  outline: none;
+  color: #ffffff;
+  font-size: 0.9rem;
+  font-family: inherit;
+  resize: none;
+}
+.contacto_section .contacto_container .contacto_form_card .textarea_box textarea::placeholder {
+  color: #ffffff;
+}
+.contacto_section .contacto_container .contacto_form_card .enviar_btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  background: #0071f4;
+  color: #ffffff;
+  border: none;
+  border-radius: 0.75rem;
+  padding: 0.9rem 2rem;
+  font-weight: bold;
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.2s;
+  width: fit-content;
+}
+.contacto_section .contacto_container .contacto_form_card .enviar_btn:hover {
+  background: #005bb5;
+  transform: translateY(-2px);
+}
+.contacto_section .contacto_container .contacto_form_card .success_msg {
+  color: #2ee6c3;
+  font-size: 0.85rem;
+}
+.contacto_section .contacto_container .contacto_form_card .error_msg {
+  color: #ef4444;
+  font-size: 0.85rem;
+}
+.contacto_section .contacto_container .contacto_info_columna {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+.contacto_section .contacto_container .contacto_info_columna .info_card {
+  background: rgba(255, 255, 255, 0.15);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 1.25rem;
+  padding: 2rem;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+}
+.contacto_section .contacto_container .contacto_info_columna .info_card .info_row {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+}
+.contacto_section .contacto_container .contacto_info_columna .info_card .info_row .blue_icon_circle {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  background: #0b5bda;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  box-shadow: 0 0 15px rgba(11, 91, 218, 0.4);
+}
+.contacto_section .contacto_container .contacto_info_columna .info_card .info_row .info_label {
+  font-size: 0.85rem;
+  color: #94a3b8;
+  display: block;
+  margin-bottom: 0.2rem;
+}
+.contacto_section .contacto_container .contacto_info_columna .info_card .info_row .info_value {
+  font-size: 0.95rem;
+  color: #ffffff;
+  font-weight: 600;
+}
+.contacto_section .contacto_container .contacto_info_columna .info_card .separator_line {
+  width: 100%;
+  height: 1px;
+  background: rgba(255, 255, 255, 0.1);
+  margin: 1.25rem 0;
+}
+.contacto_section .contacto_container .contacto_info_columna .info_card.socials_card .socials_title {
+  font-size: 0.95rem;
+  color: #94a3b8;
+  display: block;
+  margin-bottom: 1rem;
+}
+.contacto_section .contacto_container .contacto_info_columna .info_card.socials_card .socials_list {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+.contacto_section .contacto_container .contacto_info_columna .info_card.socials_card .socials_list .social_row {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  text-decoration: none;
+  transition: transform 0.2s;
+}
+.contacto_section .contacto_container .contacto_info_columna .info_card.socials_card .socials_list .social_row .blue_icon_circle {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background: #0b5bda;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+.contacto_section .contacto_container .contacto_info_columna .info_card.socials_card .socials_list .social_row .social_name {
+  font-size: 0.9rem;
+  color: #ffffff;
+  font-weight: 500;
+}
+.contacto_section .contacto_container .contacto_info_columna .info_card.socials_card .socials_list .social_row:hover {
+  transform: translateX(4px);
+}
+
+/* Responsividad para móviles y tablets */
+@media (max-width: 992px) {
+  .contacto_section .contacto_container {
+    grid-template-columns: 1fr;
+  }
+  .contacto_section .contacto_container .contacto_form_card .form_grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/*# sourceMappingURL=contacto.modulo.css.map */

@@ -63,7 +63,7 @@ $borde_sidebar: rgba(255, 255, 255, 0.12);
 }
 
 .header-sticky {
-  top: 10px;
+  top: 20px;
 }
 
 .header-sticky .header_container {
@@ -74,7 +74,7 @@ $borde_sidebar: rgba(255, 255, 255, 0.12);
 
 .header_container img {
   display: block;
-  width: 62px;
+  width: 50px;
   height: auto;
   object-fit: contain;
   transition: transform 0.3s ease, width 0.3s ease;
@@ -94,7 +94,7 @@ $borde_sidebar: rgba(255, 255, 255, 0.12);
 .titulo-nav{
   color: $blanco;
   font-family: "Plus Jakarta Sans", sans-serif;
-  font-size: 15px;
+  font-size: 20px;
   font-weight: bold;
 }
 
@@ -287,8 +287,6 @@ $borde_sidebar: rgba(255, 255, 255, 0.12);
   transition: height 0.25s ease;
 }
 
-
-
 .header_mobile-link:hover {
   color: $blanco;
   padding-left: 31px;
@@ -320,8 +318,19 @@ $borde_sidebar: rgba(255, 255, 255, 0.12);
     border-radius: 20px;
   }
 
+  .titulo-nav{
+    color: $blanco;
+    font-family: "Plus Jakarta Sans", sans-serif;
+    font-size: 15px;
+    font-weight: bold;
+  }
+
   .header_container img {
-    width: 66px;
+    display: block;
+    width: 50px;
+    height: auto;
+    object-fit: contain;
+    transition: transform 0.3s ease, width 0.3s ease;
   }
 
   .header_nav {
@@ -334,7 +343,6 @@ $borde_sidebar: rgba(255, 255, 255, 0.12);
 }
 
 @media (max-width: 576px) {
-
   .header {
     top: 10px;
   }
@@ -347,7 +355,18 @@ $borde_sidebar: rgba(255, 255, 255, 0.12);
   }
 
   .header_container img {
-    width: 72px;
+    display: block;
+    width: 35px;
+    height: auto;
+    object-fit: contain;
+    transition: transform 0.3s ease, width 0.3s ease;
+  }
+
+  .titulo-nav{
+    color: $blanco;
+    font-family: "Plus Jakarta Sans", sans-serif;
+    font-size: 15px;
+    font-weight: bold;
   }
 
   .header_menu-button {
@@ -362,7 +381,7 @@ $borde_sidebar: rgba(255, 255, 255, 0.12);
   }
 
   .header_sidebar-top img {
-    width: 88px;
+    width: 40px;
   }
 
   .header_mobile-link {

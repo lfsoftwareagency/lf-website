@@ -1,11 +1,11 @@
 import { NextResponse } from 'next/server';
-import type {HeaderItem, hero_img, logo, procesos, proyectos_section} from '@/app/types/menu';
+import type {HeaderItem, hero_img, logo, procesos, proyectos_section, contacto_info} from '@/app/types/menu';
 
 export const dynamic = 'force-dynamic';
 
 const logos: logo[] = [
     {
-        image: '/img/logo-nav.png',
+        image: '/img/logo.svg',
         title: 'L&F Software Agency'
     }
 ];
@@ -127,12 +127,28 @@ const proyectosData: proyectos_section = {
     }
 };
 
+const contactoData: contacto_info = {
+    badge: 'Ponte en contacto',
+    title: 'Ponte en',
+    title_highlight: 'contacto',
+    subtitle: '¿Tienes un proyecto en mente o necesitas asesoramiento? Escribenos  y nuestro equipo se pondra en contacto contigo a la brevedad.',
+    telefonos: ['+51 926 997 532','+51 933 103 242'],
+    email: 'lfsoftwareAgency@gmail.com',
+    socials: [
+        {platform: 'Instagram', username: 'L&F software Agency', icon: '/img/contacto/instagram.png', url:'https://www.instagram.com/lfsoftwareagency/'},
+        {platform: 'Facebook', username: 'L&F software Agency', icon: '/img/contacto/facebook.png', url:'https://web.facebook.com/lfsoftwareagency'},
+        {platform: 'TikTok', username: 'L&F software Agency', icon: '/img/contacto/tiktok.png', url:'https://www.tiktok.com/@lfsoftwareagency'},
+        {platform: 'Threads', username: 'L&F software Agency', icon: '/img/contacto/threads.png', url:'https://www.threads.com/@lfsoftwareagency'}
+    ]
+}
+
 export async function GET() {
     return NextResponse.json({
         headerItems,
         hero_imagen,
         logos,
         procesosData,
-        proyectosData
+        proyectosData,
+        contactoData
     });
 }
