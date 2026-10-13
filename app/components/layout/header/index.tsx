@@ -1,6 +1,5 @@
 'use client';
 import { useEffect, useState } from 'react';
-import { usePathname } from 'next/navigation';
 import Link from 'next/link';
 import { HeaderItem, logo } from '@/app/types/menu';
 import Logo from './logo';
@@ -9,22 +8,25 @@ import "@/app/sass/header.modulo.scss";
 const Header = () => {
     const [sidebarOpen, setSidebarOpen] = useState(false);
     const [sticky, setSticky] = useState(false);
-
     const [menuItems, setMenuItems] = useState<HeaderItem[]>([]);
     const [logoData, setLogoData] = useState<logo | null>(null);
+    const [activeSection, setActiveSection] = useState(''); // <-- 1. Estado para controlar el enlace activo
 
-    const pathname = usePathname();
+    // Detectar si ya hay un hash en la URL al cargar la página
+    useEffect(() => {
+        if (window.location.hash) {
+            setActiveSection(window.location.hash);
+        }
+    }, []);
 
     const handleNavigation = (
         e: React.MouseEvent<HTMLAnchorElement>,
         href: string
     ) => {
         const hash = href.split('#')[1];
-
         if (!hash) return;
 
         e.preventDefault();
-
         const element = document.getElementById(hash);
 
         if (element) {
@@ -32,36 +34,25 @@ const Header = () => {
                 behavior: 'smooth',
                 block: 'start',
             });
-
             window.history.pushState(null, '', `#${hash}`);
+            setActiveSection(`#${hash}`); // <-- 2. Guardamos el hash activo al hacer click
         }
 
         setSidebarOpen(false);
     };
 
-
     useEffect(() => {
         const fetchMenuData = async () => {
             try {
                 const res = await fetch('/api/data-page');
-
                 if (!res.ok) return;
-
                 const data = await res.json();
-
-                if (data.headerItems) {
-                    setMenuItems(data.headerItems);
-                }
-
-                if (data.logos?.length > 0) {
-                    setLogoData(data.logos[0]);
-                }
-
+                if (data.headerItems) setMenuItems(data.headerItems);
+                if (data.logos?.length > 0) setLogoData(data.logos[0]);
             } catch (error) {
                 console.error('Error cargando menú:', error);
             }
         };
-
         fetchMenuData();
     }, []);
 
@@ -69,32 +60,32 @@ const Header = () => {
         const handleScroll = () => {
             setSticky(window.scrollY >= 30);
         };
-
         window.addEventListener('scroll', handleScroll);
-
-        return () => {
-            window.removeEventListener('scroll', handleScroll);
-        };
+        return () => window.removeEventListener('scroll', handleScroll);
     }, []);
 
     return (
         <>
             <header className={`header ${sticky ? 'header-sticky' : ''}`}>
-
                 <div className="header_container">
-
                     {/* LOGO */}
                     <Logo logoData={logoData}/>
+                    <div className="titulo-nav">
+                        <Link href="/">Software Agency</Link>
+                    </div>
 
                     {/* MENU DESKTOP */}
                     <nav className="header_nav">
-
-                        {menuItems.map((item, index) => (
-                            <Link key={index} href={item.href} onClick={(e) => handleNavigation(e, item.href)} className={`header_link ${pathname === item.href ? 'header_link-active' : ''}`}>
+                    {menuItems.map((item, index) => (
+                            <Link
+                                key={index}
+                                href={item.href}
+                                onClick={(e) => handleNavigation(e, item.href)}
+                                className={`header_link ${activeSection && item.href.includes(activeSection) ? 'header_link-active' : ''}`}
+                            >
                                 {item.label}
                             </Link>
                         ))}
-
                     </nav>
 
                     {/* MENU MOBILE */}
@@ -107,7 +98,6 @@ const Header = () => {
                         <span></span>
                         <span></span>
                     </button>
-
                 </div>
             </header>
 
@@ -122,11 +112,10 @@ const Header = () => {
             {/* SIDEBAR MOBILE */}
             <aside className={`header_sidebar ${sidebarOpen ? 'header_sidebar-open' : ''}`}>
                 <div className="header_sidebar-top">
-                    {/* Logo */}
                     <Logo logoData={logoData} />
-                    <div className="titulo-nav">L&F Software Agency</div>
-
-                    {/* Botón Cerrar */}
+                    <div className="titulo-nav">
+                        <Link href="/">Software Agency</Link>
+                    </div>
                     <button
                         className="header_close"
                         onClick={() => setSidebarOpen(false)}
@@ -136,13 +125,13 @@ const Header = () => {
                     </button>
                 </div>
 
-                {/* Navegación */}
+                {/* Navegación Mobile */}
                 <nav className="header_mobile-nav">
                     {menuItems.map((item, index) => (
                         <Link
                             key={index}
                             href={item.href}
-                            className={`header_mobile-link ${pathname === item.href ? 'active' : ''}`}
+                            className={`header_link ${activeSection && item.href.includes(activeSection) ? 'header_link-active' : ''}`}
                             onClick={(e) => handleNavigation(e, item.href)}
                         >
                             {item.label}

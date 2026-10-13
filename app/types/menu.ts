@@ -55,3 +55,38 @@ export type proyectos_section = {
         link: string;
     };
 };
+
+export type contacto_info = {
+    badge: string;
+    title: string;
+    title_highlight: string;
+    subtitle: string;
+    telefonos: string[];
+    email: string;
+    socials: {
+        platform: string;
+        username: string;
+        icon: string;
+        url: string;
+    }[];
+};
+
+export type footer_info = {
+    newsletter: {
+        badge: string;
+        title: string;
+        title_highlight: string;
+        subtitle: string;
+    };
+    brand: {
+        description: string;
+        socials: { icon: string; url: string; label: string }[];
+    };
+    enlaces: { label: string; href: string }[];
+    servicios: { label: string; href: string }[];
+    contacto: {
+        email: string;
+        phone: string;
+        location: string;
+    };
+};

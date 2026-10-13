@@ -47,7 +47,7 @@
 }
 
 .header-sticky {
-  top: 10px;
+  top: 20px;
 }
 
 .header-sticky .header_container {
@@ -58,7 +58,7 @@
 
 .header_container img {
   display: block;
-  width: 62px;
+  width: 50px;
   height: auto;
   object-fit: contain;
   transition: transform 0.3s ease, width 0.3s ease;
@@ -78,7 +78,7 @@
 .titulo-nav {
   color: #ffffff;
   font-family: "Plus Jakarta Sans", sans-serif;
-  font-size: 15px;
+  font-size: 20px;
   font-weight: bold;
 }
 
@@ -299,8 +299,18 @@
     padding: 0 15px;
     border-radius: 20px;
   }
+  .titulo-nav {
+    color: #ffffff;
+    font-family: "Plus Jakarta Sans", sans-serif;
+    font-size: 15px;
+    font-weight: bold;
+  }
   .header_container img {
-    width: 66px;
+    display: block;
+    width: 50px;
+    height: auto;
+    object-fit: contain;
+    transition: transform 0.3s ease, width 0.3s ease;
   }
   .header_nav {
     display: none;
@@ -320,7 +330,17 @@
     border-radius: 18px;
   }
   .header_container img {
-    width: 72px;
+    display: block;
+    width: 35px;
+    height: auto;
+    object-fit: contain;
+    transition: transform 0.3s ease, width 0.3s ease;
+  }
+  .titulo-nav {
+    color: #ffffff;
+    font-family: "Plus Jakarta Sans", sans-serif;
+    font-size: 15px;
+    font-weight: bold;
   }
   .header_menu-button {
     width: 43px;
@@ -332,7 +352,7 @@
     padding: 25px 22px;
   }
   .header_sidebar-top img {
-    width: 88px;
+    width: 40px;
   }
   .header_mobile-link {
     min-height: 62px;

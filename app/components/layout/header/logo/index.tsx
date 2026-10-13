@@ -12,9 +12,9 @@ const Logo = ({ logoData }: LogoProps) => {
     return (
         <Link href="/" className="header-logo">
             <Image
-                src={logoData?.image || '/img/logo-nav.png'}
+                src={logoData?.image || '/img/logo.svg'}
                 alt={logoData?.title || 'L&F Software Agency'}
-                width={90}
+                width={60}
                 height={60}
                 quality={100}
                 priority

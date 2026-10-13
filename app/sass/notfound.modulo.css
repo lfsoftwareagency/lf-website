@@ -1,0 +1,94 @@
+.notfound_section {
+  width: 100%;
+  min-height: 85vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 7rem 2rem 4rem 2rem;
+  font-family: "Plus Jakarta Sans", sans-serif;
+}
+.notfound_section .notfound_container {
+  width: 100%;
+  max-width: 600px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 2rem;
+}
+.notfound_section .notfound_container .notfound_img_box {
+  position: relative;
+  width: 100%;
+  max-width: 440px;
+  border-radius: 1.5rem; /* <-- Esquinas redondeadas */
+  overflow: hidden; /* <-- Asegura que la imagen respete el redondeo */
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4), 0 0 25px rgba(0, 113, 244, 0.12);
+  background: rgba(15, 23, 42, 0.5);
+}
+.notfound_section .notfound_container .notfound_img_box img {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+}
+.notfound_section .notfound_container .notfound_text {
+  max-width: 480px;
+}
+.notfound_section .notfound_container .notfound_text h2 {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #ffffff;
+  line-height: 1.3;
+  margin-bottom: 0.5rem;
+}
+.notfound_section .notfound_container .notfound_text h2 span {
+  color: #0071f4;
+  font-style: italic;
+  font-weight: 400;
+}
+.notfound_section .notfound_container .notfound_text p {
+  font-size: 0.92rem;
+  color: #94a3b8;
+  line-height: 1.5;
+}
+.notfound_section .notfound_container .notfound_btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  background: #0071f4;
+  color: #ffffff;
+  padding: 0.8rem 1.8rem;
+  border-radius: 9999px;
+  font-weight: 600;
+  font-size: 0.9rem;
+  text-decoration: none;
+  box-shadow: 0 8px 20px rgba(0, 113, 244, 0.3);
+  transition: background 0.25s ease, transform 0.25s ease, box-shadow 0.25s ease;
+}
+.notfound_section .notfound_container .notfound_btn .btn_icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.25s ease;
+}
+.notfound_section .notfound_container .notfound_btn:hover {
+  background: #005bb5;
+  transform: translateY(-2px);
+  box-shadow: 0 12px 25px rgba(0, 113, 244, 0.4);
+}
+.notfound_section .notfound_container .notfound_btn:hover .btn_icon {
+  transform: translateX(4px);
+}
+
+@media (max-width: 768px) {
+  .notfound_section {
+    padding-top: 5rem;
+  }
+  .notfound_section .notfound_container .notfound_text h2 {
+    font-size: 1.6rem;
+  }
+}
+
+/*# sourceMappingURL=notfound.modulo.css.map */
