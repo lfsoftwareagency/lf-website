@@ -5,6 +5,7 @@ import Servicios from './components/home/services';
 import Nvalores from './components/home/our-values';
 import Procesos from './components/home/procesos'
 import Proyectos from './components/home/proyectos'
+import FaqSection from './components/home/faq'
 import {Analytics} from "@vercel/analytics/next";
 export const metadata: Metadata = {
   title: "L&F Software Agency",
@@ -20,6 +21,7 @@ export default function Home() {
         <Servicios />
         <Procesos/>
         <Proyectos/>
+        <FaqSection/>
       </main>
   )
 }

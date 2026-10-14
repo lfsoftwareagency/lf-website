@@ -8,9 +8,62 @@ export type hero_img = {
     title: string;
 }
 
+
 export type logo = {
     image: string;
     title: string;
+}
+
+export type serviceAbout_item = {
+    id: string,
+    title: string,
+    description: string,
+    iconName: string,
+    bgColor : string
+}
+
+export type values_item = {
+    id: string,
+    title: string,
+    theme: string,
+    description: string,
+    iconName: string
+}
+
+export type about_section = {
+    titleAbout : string,
+    subtitle1: string,
+    subtitle2: string,
+    badge_about: string,
+    services: serviceAbout_item[],
+    titleValues : string,
+    subtitleValues: string,
+    badge_values: string,
+    values : values_item[]
+}
+
+export type service_item = {
+    id: string,
+    title: string,
+    description: string,
+    iconName: string,
+    bgColor : string
+}
+
+export type solution_item = {
+    id: string,
+    title: string,
+    description: string,
+    iconName: string,
+    number : string,
+    bgColor : string
+}
+export type service_section = {
+    title : string,
+    subtitle: string
+    badge_text: string,
+    service: service_item[],
+    solution: solution_item[],
 }
 
 export type proceso_step = {
@@ -55,3 +108,24 @@ export type proyectos_section = {
         link: string;
     };
 };
+
+
+
+export type question_item = {
+    iconName: string,
+    question: string,
+    answer: string
+}
+
+export type faq_img = {
+    image: string;
+    title: string
+}
+
+export type faq_section = {
+    title : string,
+    subtitle: string
+    badge_text: string,
+    image : faq_img,
+    question: question_item[]
+}
