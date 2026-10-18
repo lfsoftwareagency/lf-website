@@ -1,8 +1,10 @@
+'use client'
 import { MoveRight, CodeXml, PencilLine, ChartNoAxesCombined, UsersRound   } from 'lucide-react';
 import "@/app/sass/about.scss";
-import { services } from "@/app/api/json/about.json"
+import { about_section} from "@/app/types/menu";
 import Badge from "@/app/components/ui/badge"
 import Link from "next/link";
+import React, {useEffect, useState} from "react";
 
 const iconMap = {
     service1: CodeXml,
@@ -10,15 +12,35 @@ const iconMap = {
     service3: ChartNoAxesCombined,
 }
 function About() {
+    const [aboutData , setAboutData] = useState<about_section | null>(null);
+
+    useEffect(() => {
+        async function getAboutData() {
+            const response = await fetch("/api/data-page");
+
+            if (!response.ok) {
+                throw new Error("No se pudieron obtener los datos del Service");
+            }
+            const data = await response.json();
+            setAboutData(data.aboutData);
+        }
+
+        getAboutData();
+    }, []);
+
+    if(aboutData == null){
+        return <p>Cargando datos...</p>;
+    }
+
     return (
         <>
-            <section id="nosotros" className="min-h-screen w-full flex items-start justify-center pt-10 sm:pt-1 lg:pt-0 pb-12 px-4 sm:px-8 lg:px-1">
-                <div className="w-full max-w-6xl mx-auto px-6 sm:px-12 lg:px-16">
-                    <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-13 items-center">
+            <section id="nosotros" className="min-h-screen w-full flex items-start justify-center pt-10 sm:pt-1 lg:pt-0 pb-12">
+                <div className="w-full max-w-7xl mx-auto px-6 sm:px-12 md:px-[90px] lg:px-[60px] 2xl:px-[5px]">
+                    <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-12 items-center">
                         {/*Columna izquierda*/}
-                        <div className="flex flex-col items-start gap-8 lg:gap-[4rem]">
+                        <div className=" flex flex-col items-start gap-8 lg:gap-[3rem]">
 
-                            <Badge titleBadge="NOSOTROS" icon={UsersRound}/>
+                            <Badge titleBadge={aboutData.badge_about} icon={UsersRound}/>
 
                             <h1 className="text-4xl sm:text-5xl font-extrabold leading-tight tracking-tight text-white">
                                 Tecnología que <br/>
@@ -27,12 +49,10 @@ function About() {
 
                             <div className="flex flex-col gap-4 text-gray-300 text-base sm:text-lg leading-relaxed max-w-2xl lg:max-w-xl">
                                 <p>
-                                    En L&F Software Agency convertimos ideas y necesidades de negocio en soluciones
-                                    digitales funcionales, modernas y escalables.
+                                    {aboutData.subtitle1}
                                 </p>
                                 <p>
-                                    Desarrollamos software a medida, páginas web y estrategias digitales que te ayudan a
-                                    optimizar procesos, conectar con tus clientes y hacer crecer tu negocio.
+                                    {aboutData.subtitle2}
                                 </p>
                             </div>
 
@@ -46,7 +66,7 @@ function About() {
 
                         {/*Columna derecha*/}
                         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-1 gap-8 sm:gap-x-10 lg:gap-10">
-                            {services.map((item, index) => {
+                            {aboutData.services.map((item, index) => {
                                 const IconComponent = iconMap[item.iconName as keyof typeof iconMap];
                                 return (
                                     <div

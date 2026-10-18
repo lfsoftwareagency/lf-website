@@ -1,7 +1,9 @@
+'use client'
 import { Target, Presentation, Headset, UsersRound, Lightbulb, Code2, Palette, LifeBuoy } from "lucide-react";
 import Badge from "@/app/components/ui/badge";
-import {services, solutions} from "@/app/api/json/services.json"
+import { service_section} from "@/app/types/menu";
 import '@/app/sass/service.scss'
+import React, {useEffect, useState} from "react";
 
 const iconService = {
     software: Code2,
@@ -17,16 +19,37 @@ const  iconSolutions = {
 
 
 function Services() {
+    const [serviceData, setServiceData] = useState<service_section | null>(null);
+
+    useEffect(() => {
+        async function getServiceData() {
+            const response = await fetch("/api/data-page");
+
+            if (!response.ok) {
+                throw new Error("No se pudieron obtener los datos del About");
+            }
+            const data = await response.json();
+            setServiceData(data.serviceData);
+        }
+
+        getServiceData();
+
+    }, []);
+
+    if (serviceData === null) {
+        return <p>Cargando datos...</p>;
+    }
+
     return (
         <>
             <section id="servicios"
-                     className="min-h-screen w-full flex items-start justify-center pt-10 sm:pt-1 lg:pt-0 pb-12 px-4 sm:px-8 lg:px-1">
-                <div className="w-full max-w-6xl mx-auto px-6 sm:px-12 lg:px-16">
-                    <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-13 items-center">
+                     className="min-h-screen w-full flex items-start justify-center pt-10 sm:pt-1 lg:pt-0 pb-12">
+                <div className="w-full max-w-7xl mx-auto px-6 sm:px-12 md:px-[90px] lg:px-[60px] 2xl:px-[5px]">
+                    <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
                         {/*Columna izquierda*/}
                         <div className="flex flex-col items-start gap-8 lg:gap-[1.5rem] lg:-mt-6 ">
 
-                            <Badge titleBadge="SOLUCIONES DE IMPACTO" icon={Lightbulb}/>
+                            <Badge titleBadge={serviceData.badge_text} icon={Lightbulb}/>
 
                             {/*SOLO SE MOSTRARA PARA PANTALLAS MEDIANAS Y PEQUEÑAS*/}
                             <div className="flex flex-col gap-3 mb-8 lg:hidden">
@@ -36,12 +59,12 @@ function Services() {
                                     y escalable
                                 </h1>
                                 <p className="text-gray-300 text-base sm:text-lg leading-relaxed max-w-2xl">
-                                    Soluciones digitales a medida para empresas que quieren crecer.
+                                    {serviceData.subtitle}
                                 </p>
                             </div>
 
                             <div className="w-full flex flex-col gap-6 sm:gap-8">
-                                {services.map((item) => {
+                                {serviceData.service.map((item) => {
                                     const IconComponent = iconService[item.iconName as keyof typeof iconService];
 
                                     return (
@@ -79,7 +102,7 @@ function Services() {
                         </div>
 
                         {/*Columna derecha*/}
-                        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-1 gap-8 sm:gap-x-10 lg:gap-2">
+                        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-1 gap-8 sm:gap-x-10 lg:gap-6">
                             <div className="hidden lg:block">
                                 <h1 className="text-4xl lg:text-4xl sm:text-5xl font-extrabold leading-tight tracking-tight text-white">
                                     Impulsamos tu negocio con <br/>
@@ -95,8 +118,8 @@ function Services() {
                                 </div>
                             </div>
 
-                            {solutions.map((item, index) => {
-                                const IconComponent = iconSolutions[item.icon as keyof typeof iconSolutions];
+                            {serviceData.solution.map((item, index) => {
+                                const IconComponent = iconSolutions[item.iconName as keyof typeof iconSolutions];
                                 return (
                                     <div
                                         key={index}

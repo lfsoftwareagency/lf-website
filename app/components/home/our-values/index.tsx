@@ -1,7 +1,9 @@
+'use client'
 import {MessageSquareCheck, Handshake, Rocket, ChartNoAxesCombined, Sprout    } from "lucide-react";
 import '@/app/sass/value.scss'
-import {values} from '@/app/api/json/about.json'
 import Badge from "@/app/components/ui/badge";
+import React, {useEffect, useState} from "react";
+import {about_section} from "@/app/types/menu";
 
 const iconValues = {
     val1 : Handshake ,
@@ -11,6 +13,25 @@ const iconValues = {
 }
 
 function ValueSection() {
+    const [aboutData , setAboutData] = useState<about_section | null>(null);
+
+    useEffect(() => {
+        async function getAboutData() {
+            const response = await fetch("/api/data-page");
+
+            if (!response.ok) {
+                throw new Error("No se pudieron obtener los datos del About");
+            }
+            const data = await response.json();
+            setAboutData(data.aboutData);
+        }
+
+        getAboutData();
+    }, []);
+
+    if(aboutData == null){
+        return <p>Cargando datos...</p>;
+    }
     return (
         <>
             <section className="min-h-screen w-full flex items-start justify-center pt-15 sm:pt-1 lg:-mt-10 pb-20 px-4 sm:px-8 lg:px-1">
@@ -19,7 +40,7 @@ function ValueSection() {
 
                         <div className="flex flex-col items-center gap-6 ">
 
-                            <Badge titleBadge="NUESTROS VALORES" icon={MessageSquareCheck}/>
+                            <Badge titleBadge={aboutData.badge_values} icon={MessageSquareCheck}/>
 
                             <h1 className=" text-4xl sm:text-5xl font-extrabold leading-tight tracking-tight text-white">
                                 Lo que nos
@@ -29,8 +50,7 @@ function ValueSection() {
                             <div
                                 className="flex flex-col text-gray-300 text-base  sm:text-sm lg:text-sm leading-relaxed max-w-xl">
                                 <p>
-                                    Creemos en la tecnología como una herramienta para generar impacto real. Por eso,
-                                    trabajamos con compromiso, honestidad y una mentalidad siempre orientada a los resultados.
+                                    {aboutData.subtitleValues}
                                 </p>
 
                             </div>
@@ -40,8 +60,8 @@ function ValueSection() {
                     </div>
 
                     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-6 mt-6">
-                        {values.map((item) => {
-                            const IconComponent = iconValues[item.icon as keyof typeof iconValues];
+                        {aboutData.values.map((item) => {
+                            const IconComponent = iconValues[item.iconName as keyof typeof iconValues];
 
                             return (
                                 <div

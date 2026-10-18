@@ -1,11 +1,22 @@
 import { NextResponse } from 'next/server';
-import type {HeaderItem, hero_img, logo, procesos, proyectos_section, contacto_info} from '@/app/types/menu';
+import {
+    about_section,
+    faq_img,
+    faq_section,
+    HeaderItem,
+    hero_img,
+    logo,
+    procesos,
+    proyectos_section,
+    service_section,
+    contacto_info
+} from '@/app/types/menu';
 
 export const dynamic = 'force-dynamic';
 
 const logos: logo[] = [
     {
-        image: '/img/logo.svg',
+        image: '/img/logo-nav.png',
         title: 'L&F Software Agency'
     }
 ];
@@ -29,6 +40,136 @@ const hero_imagen: hero_img[] = [
         title: 'rayo span'
     }
 ];
+
+const  aboutData : about_section = {
+    titleAbout: "Tecnología que impulsa tu negocio",
+    subtitle1: "En L&F Software Agency convertimos ideas y necesidades de negocio en soluciones digitales funcionales, modernas y escalables.",
+    subtitle2: "Desarrollamos software a medida, páginas web y estrategias digitales que te ayudan a optimizar procesos, conectar con tus clientes y hacer crecer tu negocio.",
+    badge_about: "NOSOTROS",
+
+    services: [
+        {
+            id: "desarrollo-a-medida",
+            title: "Desarrollo a medida",
+            description: "Sistemas y aplicaciones adaptados a las necesidades de tu negocio.",
+            iconName: "service1",
+            bgColor: "bg-blue"
+        },
+        {
+            id: "diseno-web",
+            title: "Diseño web",
+            description: "Páginas modernas, rápidas y enfocadas en ofrecer una gran experiencia de usuario.",
+            iconName: "service2",
+            bgColor: "bg-teal"
+        },
+        {
+            id: "soluciones-digitales",
+            title: "Soluciones digitales",
+            description: "Estrategias y herramientas tecnológicas para resolver problemas reales y generar resultados.",
+            iconName: "service3",
+            bgColor: "bg-purple"
+        }
+    ],
+
+    titleValues: "Lo que nos mueve",
+    subtitleValues : "Creemos en la tecnología como una herramienta para generar impacto real. Por eso, trabajamos con compromiso, honestidad y una mentalidad siempre orientada a los resultados.",
+    badge_values : "NUESTROS VALORES",
+    values : [
+        {
+            id: "compromiso",
+            theme: "purple",
+            iconName: "val1",
+            title: "Compromiso",
+            description: "Nos involucramos profundamente en cada proyecto para entender tus necesidades."
+        },
+        {
+            id: "innovacion",
+            theme: "blue",
+            iconName: "val2",
+            title: "Innovación",
+            description: "Buscamos constantemente nuevas y mejores soluciones tecnológicas"
+        },
+        {
+            id: "calidad",
+            theme: "teal",
+            iconName: "val3",
+            title: "Calidad",
+            description: "Entregamos software robusto, escalable y con un diseño excepcional."
+        },
+        {
+            id: "crecimiento",
+            theme: "lime",
+            iconName: "val4",
+            title: "Crecimiento",
+            description: "Nos enfocamos en el crecimiento de tu negocio y en el nuestro."
+        }
+    ]
+
+
+}
+
+const serviceData: service_section = {
+    title: "Impulsamos tu negocio con tecnología sólida y escalable",
+    subtitle: "Soluciones digitales a medida para empresas que quieren crecer.",
+    badge_text: "SOLUCIONES DE IMPACTO",
+    service: [
+        {
+            id : "desarrollo-medida",
+            title : "Desarrollo de software a medida",
+            description : "Diseñamos y construimos sistemas robustos desde cero. Creamos la infraestructura y el backend que tu empresa necesita para centralizar datos y escalar sin limites.",
+            iconName: "software",
+            bgColor : "blue"
+        },
+        {
+            id : "diseño-producto",
+            title : "Diseño de producto (UI/UX)",
+            description : "Creamos interfaces intuitivas y atractivas centradas en el usuario. Convertimos procesos complejos en experiencias simples que tus clientes disfrutan usar.",
+            iconName: "diseño",
+            bgColor : "teal"
+        },
+        {
+            id : "soporte-mantenimiento",
+            title : "Soporte y Mantenimiento",
+            description : "Acompañamos tu software después del lanzamiento. Monitoreo, actualizaciones y mejoras continuas para tu sistema nunca se quede atrás.",
+            iconName: "soporte",
+            bgColor : "purple"
+        }
+    ],
+
+    solution: [
+
+        {
+            id : "estrategia",
+            title: "Estrategia antes del desarrollo",
+            description: "Analizamos las necesidadesde de tu negocio para crear soluciones web y sistemas que realmente se adapten a tus procesos y te ayuden a crecer",
+            iconName: "solution1",
+            number: "01",
+            bgColor : "bg-blue"
+        },
+        {
+            id: "avances",
+            title: "Avances visibles paso a paso",
+            description: "Te mantenemos al tanto del progreso durante todo el proyecto. Podrás revisar avances y darnos tu feedback para asegurar que el resultado se adapte a lo que necesitas.",
+            iconName: "solution2",
+            number: "02",
+            bgColor : "bg-teal"
+        },
+        {
+            id: "avances",
+            title: "Soporte después del lanzamiento",
+            description: "No terminamos el proyecto cuando se publica. Te acompañamos con soporte, mejoras y mantenimiento para que tu solución siga funcionando y creciendo contigo.",
+            iconName: "solution3",
+            number: "03",
+            bgColor : "bg-purple"
+        }
+    ]
+
+
+
+
+
+
+}
 
 const procesosData: procesos = {
     logo_badge: '/img/procesos/nuestro-proceso.png',
@@ -127,6 +268,47 @@ const proyectosData: proyectos_section = {
     }
 };
 
+
+const  faqData: faq_section = {
+    title: "Preguntas frecuentes",
+    subtitle: "Resolvemos algunas de las dudas mas comunes antes de comenzar tu proyecto.",
+    badge_text: "FAQ",
+    image: {
+        image: '/img/faq/faq_img.png',
+        title: 'img faq',
+    },
+    question: [
+        {
+            "iconName": "CircleHelp",
+            "question": "¿Qué tipo de proyectos desarrollamos?",
+            "answer": "Desarrollamos páginas web, sistemas de gestión, plataformas digitales y aplicaciones personalizadas, adaptadas a las necesidades y objetivos de cada negocio."
+        },
+        {
+            "iconName": "UsersRound",
+            "question": "¿Trabajan con empresas de cualquier tamaño?",
+            "answer": "Sí, podemos trabajar con emprendedores, pequeñas empresas y organizaciones que busquen optimizar sus procesos mediante soluciones tecnológicas. Cada propuesta se adapta a las necesidades y al alcance del proyecto."
+        },
+        {
+            "iconName": "Clock",
+            "question": "¿Cuánto tiempo demora desarrollar un proyecto?",
+            "answer": "El tiempo depende de la complejidad, las funcionalidades y los requerimientos del proyecto. Antes de comenzar, definimos el alcance y establecemos un cronograma de trabajo para mantener una planificación clara."
+        },
+        {
+            "iconName": "SquarePen",
+            "question": "¿Puedo solicitar cambios durante el desarrollo?",
+            "answer": "Sí, puedes proponer ajustes durante el desarrollo. Evaluamos cada solicitud para determinar su impacto en el alcance, el presupuesto y los plazos, y coordinamos contigo su implementación."
+        },
+        {
+            "iconName": "Headset",
+            "question": "¿Ofrecen soporte después del lanzamiento?",
+            "answer": "Podemos coordinar soporte y mantenimiento después del lanzamiento para ayudar a resolver incidencias y mantener la solución funcionando correctamente. Las condiciones y el alcance del servicio se definen según lo acordado para cada proyecto."
+        }
+    ]
+}
+
+
+
+
 const contactoData: contacto_info = {
     badge: 'Ponte en contacto',
     title: 'Ponte en',
@@ -147,8 +329,11 @@ export async function GET() {
         headerItems,
         hero_imagen,
         logos,
+        aboutData,
+        serviceData,
         procesosData,
         proyectosData,
+        faqData,
         contactoData
     });
 }
