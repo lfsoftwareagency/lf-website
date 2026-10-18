@@ -1,7 +1,7 @@
 @charset "UTF-8";
 .footer_section {
   width: 100%;
-  padding: 4rem 2rem 2rem 2rem;
+  padding: 1rem 2rem 4rem 2rem;
   font-family: "Plus Jakarta Sans", sans-serif;
   color: #ffffff;
 }
@@ -12,8 +12,6 @@
   flex-direction: column;
   gap: 3.5rem;
   /* 1. Newsletter */
-  /* 2. Grid Principal */
-  /* 3. Bottom Bar */
 }
 .footer_section .footer_container .newsletter_card {
   background: rgba(30, 41, 59, 0.5);
@@ -108,16 +106,15 @@
   background: #0369a1;
   transform: scale(1.05);
 }
+.footer_section .footer_container {
+  /* 2. Grid Principal */
+}
 .footer_section .footer_container .footer_main_grid {
   display: grid;
   grid-template-columns: 1.3fr 0.8fr 0.9fr 1.2fr;
   gap: 2.5rem;
   position: relative;
   /* Líneas verticales delimitadoras entre columnas */
-  /* Columna Marca */
-  /* Títulos de Columnas */
-  /* Listas de Enlaces */
-  /* Columna de Contacto */
 }
 .footer_section .footer_container .footer_main_grid .footer_col {
   position: relative;
@@ -130,6 +127,9 @@
   height: 100%;
   width: 1px;
   background: rgba(255, 255, 255, 0.1);
+}
+.footer_section .footer_container .footer_main_grid {
+  /* Columna Marca */
 }
 .footer_section .footer_container .footer_main_grid .brand_col .brand_header {
   display: flex;
@@ -173,10 +173,16 @@
   background: #0071f4;
   transform: translateY(-2px);
 }
+.footer_section .footer_container .footer_main_grid {
+  /* Títulos de Columnas */
+}
 .footer_section .footer_container .footer_main_grid .col_title {
   font-size: 1.25rem;
   font-weight: bold;
   margin-bottom: 1.25rem;
+}
+.footer_section .footer_container .footer_main_grid {
+  /* Listas de Enlaces */
 }
 .footer_section .footer_container .footer_main_grid .footer_links {
   list-style: none;
@@ -194,6 +200,9 @@
 }
 .footer_section .footer_container .footer_main_grid .footer_links a:hover {
   color: #ffffff;
+}
+.footer_section .footer_container .footer_main_grid {
+  /* Columna de Contacto */
 }
 .footer_section .footer_container .footer_main_grid .contact_col .contact_info_list {
   list-style: none;
@@ -241,6 +250,9 @@
 .footer_section .footer_container .footer_main_grid .contact_col .mascot_block .mascot_text span {
   font-weight: 800;
 }
+.footer_section .footer_container {
+  /* 3. Bottom Bar */
+}
 .footer_section .footer_container .footer_bottom {
   display: flex;
   align-items: center;
@@ -281,8 +293,23 @@
   }
 }
 @media (max-width: 576px) {
+  .footer_section {
+    padding: 3rem 1rem 2rem 1rem;
+  }
   .footer_section .footer_container .footer_main_grid {
-    grid-template-columns: 1fr;
+    /* Se usa una grilla de 2 columnas para Enlaces y Servicios */
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem 1rem;
+    /* La columna de Marca (Logo y redes) ocupa todo el ancho arriba */
+  }
+  .footer_section .footer_container .footer_main_grid .brand_col {
+    grid-column: 1/-1;
+  }
+  .footer_section .footer_container .footer_main_grid {
+    /* La columna de Contacto ocupa todo el ancho abajo */
+  }
+  .footer_section .footer_container .footer_main_grid .contact_col {
+    grid-column: 1/-1;
   }
   .footer_section .footer_container .footer_bottom {
     flex-direction: column;

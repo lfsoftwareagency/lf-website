@@ -42,7 +42,7 @@ export default function ProyectosSection(){
                 {data.projects.map((projects) => (
                     <div key={projects.id} className="proyecto_card">
                         <div className="proyecto_img_container">
-                            <Image src={projects.image} alt={projects.title} fill style={{objectFit: "cover"}} />
+                            <Image src={projects.image} alt={projects.title} fill style={{ objectFit: "contain" }}/>
                             <span className="proyecto_category">{projects.category}</span>
                         </div>
 
@@ -54,7 +54,7 @@ export default function ProyectosSection(){
                                     <span key={idx} className="tag">{tag}</span>
                                 ))}
                             </div>
-                            <Link href={projects.link} className="proyecto_link">
+                            <Link href={projects.link} className="proyecto_link" target="_blank" rel="noopener noreferrer">
                                 Ver mas <span>→</span>
                             </Link>
                         </div>

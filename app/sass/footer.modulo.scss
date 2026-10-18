@@ -6,7 +6,7 @@ $text_muted: #94a3b8;
 
 .footer_section {
   width: 100%;
-  padding: 4rem 2rem 2rem 2rem;
+  padding: 1rem 2rem 4rem 2rem;
   font-family: "Plus Jakarta Sans", sans-serif;
   color: $blanco;
 
@@ -333,9 +333,23 @@ $text_muted: #94a3b8;
 
 @media (max-width: 576px) {
   .footer_section {
+    padding: 3rem 1rem 2rem 1rem; // Espaciado lateral más seguro en celulares
+
     .footer_container {
       .footer_main_grid {
-        grid-template-columns: 1fr;
+        /* Se usa una grilla de 2 columnas para Enlaces y Servicios */
+        grid-template-columns: repeat(2, 1fr);
+        gap: 2rem 1rem;
+
+        /* La columna de Marca (Logo y redes) ocupa todo el ancho arriba */
+        .brand_col {
+          grid-column: 1 / -1;
+        }
+
+        /* La columna de Contacto ocupa todo el ancho abajo */
+        .contact_col {
+          grid-column: 1 / -1;
+        }
       }
 
       .footer_bottom {

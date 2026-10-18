@@ -163,12 +163,6 @@ const serviceData: service_section = {
             bgColor : "bg-purple"
         }
     ]
-
-
-
-
-
-
 }
 
 const procesosData: procesos = {
@@ -235,36 +229,36 @@ const proyectosData: proyectos_section = {
     projects: [
         {
             id: '1',
-            category: 'Sistemas web',
-            title: 'Sistemas de gestión empresarial',
-            description: 'Plataforma web para la administración de procesos, usuarios y reportes.',
-            image: '/img/proyectos/proyecto-1.png', // Reemplaza con tu imagen o mock
-            tags: ['Web', 'Web', 'UI/UX', 'Desarrollo'],
-            link: '#contacto'
+            category: 'Landing Page',
+            title: 'Grupo Espinela E.I.R.L',
+            description: 'Plataforma Web Corporativa.',
+            image: '/img/proyectos/grupoespinela.png',
+            tags: ['Desarrollo Web', 'Diseño UI/UX', 'Desarrollo a medida'],
+            link: 'https://www.grupoespinela.com/'
         },
         {
             id: '2',
-            category: 'Sistemas web',
-            title: 'Sistemas de gestión empresarial',
-            description: 'Plataforma web para la administración de procesos, usuarios y reportes.',
-            image: '/img/proyectos/proyecto-2.png',
-            tags: ['Web', 'Web', 'UI/UX', 'Desarrollo'],
-            link: '#contacto'
+            category: 'Pagina Web',
+            title: 'Noperk Ingenieria',
+            description: 'Rediseño Web y Mejora UI/UX.',
+            image: '/img/proyectos/noperk.png',
+            tags: ['WordPress', 'Diseño UI/UX', 'Rediseño'],
+            link: 'https://noperk.com/'
         },
         {
             id: '3',
             category: 'Sistemas web',
-            title: 'Sistemas de gestión empresarial',
-            description: 'Plataforma web para la administración de procesos, usuarios y reportes.',
-            image: '/img/proyectos/proyecto-3.png',
-            tags: ['Web', 'Web', 'UI/UX', 'Desarrollo'],
-            link: '#contacto'
+            title: 'Timeless - eternos',
+            description: 'E-Commerce de Indumentaria - Tienda Online.',
+            image: '/img/proyectos/timeless.png',
+            tags: ['Shipify', 'E-Commerce', 'Diseño UX/UI'],
+            link: 'https://www.eternos.com.pe/collections/drop-timeless'
         }
     ],
     view_more_card: {
         title: 'Ver más proyectos',
         description: 'Explore nuestra galería completa de soluciones digitales exitosas.',
-        link: '#proyectos'
+        link: '/Proyectos'
     }
 };
 
