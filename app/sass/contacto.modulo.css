@@ -1,17 +1,21 @@
 @charset "UTF-8";
 .contacto_section {
   width: 100%;
-  padding: 1rem 2rem 4rem 2rem;
+  max-width: 100vw;
+  overflow-x: hidden;
+  padding: 4rem 1rem 4rem 1rem;
   scroll-margin-top: 70px;
   display: flex;
   flex-direction: column;
   align-items: center;
   font-family: "Plus Jakarta Sans", sans-serif;
+  box-sizing: border-box;
 }
 .contacto_section .contacto_header {
   text-align: center;
   max-width: 650px;
   margin-bottom: 2rem;
+  padding: 0 1rem;
 }
 .contacto_section .contacto_header .contacto_titulo {
   font-size: 2.25rem;
@@ -33,6 +37,7 @@
   gap: 2rem;
   width: 100%;
   max-width: 1200px;
+  box-sizing: border-box;
   /* Formulario Izquierda */
   /* Columna Derecha */
 }
@@ -40,11 +45,13 @@
   background: rgba(255, 255, 255, 0.15);
   border: 1px solid rgba(255, 255, 255, 0.1);
   border-radius: 1.25rem;
-  padding: 2.5rem;
+  padding: 2rem 1.5rem;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
+  box-sizing: border-box;
+  width: 100%;
 }
 .contacto_section .contacto_container .contacto_form_card .form_grid {
   display: grid;
@@ -60,6 +67,8 @@
   border-radius: 0.75rem;
   padding: 0 1rem;
   transition: border-color 0.2s;
+  width: 100%;
+  box-sizing: border-box;
 }
 .contacto_section .contacto_container .contacto_form_card .input_box:focus-within {
   border-color: #0071f4;
@@ -70,6 +79,7 @@
   justify-content: center;
   margin-right: 0.75rem;
   opacity: 0.7;
+  flex-shrink: 0;
 }
 .contacto_section .contacto_container .contacto_form_card .input_box input {
   width: 100%;
@@ -79,6 +89,7 @@
   font-size: 0.9rem;
   padding: 0.9rem 0;
   font-family: inherit;
+  background: transparent;
 }
 .contacto_section .contacto_container .contacto_form_card .input_box input::placeholder {
   color: #ffffff;
@@ -136,13 +147,17 @@
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
+  width: 100%;
+  box-sizing: border-box;
 }
 .contacto_section .contacto_container .contacto_info_columna .info_card {
   background: rgba(255, 255, 255, 0.15);
   border: 1px solid rgba(255, 255, 255, 0.1);
   border-radius: 1.25rem;
-  padding: 2rem;
+  padding: 1.5rem;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+  box-sizing: border-box;
+  width: 100%;
 }
 .contacto_section .contacto_container .contacto_info_columna .info_card .info_row {
   display: flex;
@@ -170,6 +185,7 @@
   font-size: 0.95rem;
   color: #ffffff;
   font-weight: 600;
+  word-break: break-word;
 }
 .contacto_section .contacto_container .contacto_info_columna .info_card .separator_line {
   width: 100%;
@@ -216,8 +232,13 @@
 
 /* Responsividad para móviles y tablets */
 @media (max-width: 992px) {
+  .contacto_section {
+    padding: 4rem 1rem;
+  }
   .contacto_section .contacto_container {
     grid-template-columns: 1fr;
+    width: 100%;
+    padding: 0;
   }
   .contacto_section .contacto_container .contacto_form_card .form_grid {
     grid-template-columns: 1fr;

@@ -6,17 +6,21 @@ $input_border: rgba(255, 255, 255, 0.12);
 
 .contacto_section {
   width: 100%;
-  padding: 1rem 2rem 4rem 2rem;
+  max-width: 100vw; // <-- Evita desbordamientos horizontales
+  overflow-x: hidden; // <-- Oculta cualquier elemento que sobresalga
+  padding: 4rem 1rem 4rem 1rem; // <-- Padding lateral más seguro en móviles (1rem)
   scroll-margin-top: 70px;
   display: flex;
   flex-direction: column;
   align-items: center;
   font-family: "Plus Jakarta Sans", sans-serif;
+  box-sizing: border-box;
 
   .contacto_header {
     text-align: center;
     max-width: 650px;
     margin-bottom: 2rem;
+    padding: 0 1rem; // Previene que el texto toque los bordes en pantallas chicas
 
     .contacto_titulo {
       font-size: 2.25rem;
@@ -42,17 +46,20 @@ $input_border: rgba(255, 255, 255, 0.12);
     gap: 2rem;
     width: 100%;
     max-width: 1200px;
+    box-sizing: border-box;
 
     /* Formulario Izquierda */
     .contacto_form_card {
       background: $bg_card;
       border: 1px solid $border_card;
       border-radius: 1.25rem;
-      padding: 2.5rem;
+      padding: 2rem 1.5rem; // Padding ajustado para móviles
       box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
       display: flex;
       flex-direction: column;
       gap: 1.5rem;
+      box-sizing: border-box;
+      width: 100%; // Asegura que ocupe el 100% sin salirse
 
       .form_grid {
         display: grid;
@@ -69,6 +76,8 @@ $input_border: rgba(255, 255, 255, 0.12);
         border-radius: 0.75rem;
         padding: 0 1rem;
         transition: border-color 0.2s;
+        width: 100%;
+        box-sizing: border-box;
 
         &:focus-within {
           border-color: #0071f4;
@@ -80,6 +89,7 @@ $input_border: rgba(255, 255, 255, 0.12);
           justify-content: center;
           margin-right: 0.75rem;
           opacity: 0.7;
+          flex-shrink: 0;
         }
 
         input {
@@ -90,6 +100,7 @@ $input_border: rgba(255, 255, 255, 0.12);
           font-size: 0.9rem;
           padding: 0.9rem 0;
           font-family: inherit;
+          background: transparent;
 
           &::placeholder {
             color: $blanco;
@@ -160,13 +171,17 @@ $input_border: rgba(255, 255, 255, 0.12);
       display: flex;
       flex-direction: column;
       gap: 1.5rem;
+      width: 100%;
+      box-sizing: border-box;
 
       .info_card {
         background: $bg_card;
         border: 1px solid $border_card;
         border-radius: 1.25rem;
-        padding: 2rem;
+        padding: 1.5rem;
         box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+        box-sizing: border-box;
+        width: 100%;
 
         .info_row {
           display: flex;
@@ -196,6 +211,7 @@ $input_border: rgba(255, 255, 255, 0.12);
             font-size: 0.95rem;
             color: $blanco;
             font-weight: 600;
+            word-break: break-word; // Evita que correos largos rompan el diseño en móviles
           }
         }
 
@@ -257,12 +273,16 @@ $input_border: rgba(255, 255, 255, 0.12);
 /* Responsividad para móviles y tablets */
 @media (max-width: 992px) {
   .contacto_section {
+    padding: 4rem 1rem; // Asegura espacio a los lados en pantallas medianas y pequeñas
+
     .contacto_container {
       grid-template-columns: 1fr;
+      width: 100%;
+      padding: 0;
 
       .contacto_form_card {
         .form_grid {
-          grid-template-columns: 1fr;
+          grid-template-columns: 1fr; // Pone los inputs uno debajo de otro en celular
         }
       }
     }
